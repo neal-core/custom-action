@@ -1,0 +1,10 @@
+name: My tester
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run my specifics
+        uses: nealcore/custom-action@main
