@@ -6,12 +6,18 @@ inputs:
     default: Me
     description: The username to be greeted
     required: true
+
+outputs:
+  greeting:
+    description: The greeting message
+    value: ${{steps.greet.outputs.greeting}}
 runs:
   using: composite
   steps:
     - name: Say hi
+      id: greet
       shell: bash
-      run: echo "Hioooooo ${{inputs.username}}"
+      run: echo "Hioooooo ${{inputs.username}}" >> "$GITHUB_OUTPUT"
     - name: Continuous
       shell: bash
       run: echo "Nice to meet you"
