@@ -1,27 +1,29 @@
-name: Test Action
-description: My very first GitHub action
+name: NumType Check
+description: A script that checkd if a number is even or odd
 
 inputs:
-  username:
-    default: Me
-    description: The username to be greeted
+  number:
     required: true
+    description: The input number
+    default: 0
 
 outputs:
-  greeting:
-    description: The greeting message
-    value: ${{steps.greet.outputs.greeting}}
+  validator:
+    value: ${{steps.validator.outputs.valid}}
+
 runs:
   using: composite
   steps:
-    - name: Say hi
-      id: greet
+    - name: NumType Validator
       shell: bash
       env:
-        INPUT_NAME: ${{inputs.username}}
+        NUMBER: ${{inputs.number}}
       run: |
-        greeting=$(bash "${{github.action_path}}/shellexec.sh")
-        echo "greeting=$greeting" >> "$GITHUB_OUTPUT"
-    - name: Continuous
-      shell: bash
-      run: echo "Nice to meet you"
+        validator=(bash "${{github.action_path}}/shellexec.sh")
+        echo "valid=$validator" >> "$GITHUB_OUTPUT"
+      id: validator
+      
+
+
+
+    
