@@ -21,7 +21,7 @@ runs:
         INPUT_NAME: ${{inputs.username}}
       run: |
         greeting=$(bash "${{github.action_path}}/shellexec.sh")
-        "greeting=$greeting" >> "$GITHUB_OUTPUT"
+        echo "greeting=$greeting" >> "$GITHUB_OUTPUT"
     - name: Continuous
       shell: bash
       run: echo "Nice to meet you"
