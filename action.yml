@@ -20,7 +20,7 @@ runs:
       env:
         INPUT_NAME: ${{inputs.username}}
       run: |
-        greeting=$(./shellexec.sh)
+        greeting=$(${{github.action_path}}/shellexec.sh)
         "greeting=$greeting" >> "$GITHUB_OUTPUT"
     - name: Continuous
       shell: bash
