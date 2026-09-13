@@ -14,4 +14,4 @@ runs:
       run: echo "Hioooooo ${{inputs.username}}"
     - name: Continuous
       shell: bash
-      run: echo "Nice to meet you
+      run: echo "Nice to meet you"
