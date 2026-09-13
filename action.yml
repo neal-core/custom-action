@@ -17,7 +17,7 @@ runs:
     - name: Say hi
       id: greet
       shell: bash
-      run: echo "Hioooooo ${{inputs.username}}" >> "$GITHUB_OUTPUT"
+      run: echo "greeting=Hioooooo ${{inputs.username}}" >> "$GITHUB_OUTPUT"
     - name: Continuous
       shell: bash
       run: echo "Nice to meet you"
