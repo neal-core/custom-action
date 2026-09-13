@@ -1,9 +1,17 @@
 name: Test Action
 description: My very first GitHub action
 
+inputs:
+  username:
+    default: Me
+    description: The username to be greeted
+    required: true
 runs:
   using: composite
   steps:
     - name: Say hi
       shell: bash
-      run: echo "Hioooooo"
+      run: echo "Hioooooo ${{inputs.username}}"
+    - name: Continuous
+      shell: bash
+      run: echo "Nice to meet you
