@@ -12,4 +12,4 @@ jobs:
         with:
           username: Neal
       - name: Run the output
-        run: echo "Returned ${{steps.specs.outputs.greeting}}
+        run: echo "Returned ${{steps.specs.outputs.greeting}}"
