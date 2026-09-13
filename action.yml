@@ -19,7 +19,7 @@ runs:
       env:
         NUMBER: ${{inputs.number}}
       run: |
-        validator=(bash "${{github.action_path}}/shellexec.sh")
+        validator=$(bash "${{github.action_path}}/shellexec.sh")
         echo "valid=$validator" >> "$GITHUB_OUTPUT"
       id: validator
       
