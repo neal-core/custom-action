@@ -10,6 +10,6 @@ jobs:
         id: specs
         uses: neal-core/custom-action@main
         with:
-          username: Neal
+          number: 40
       - name: Run the output
-        run: echo "Returned ${{steps.specs.outputs.greeting}}"
+        run: echo "Returned ${{steps.specs.outputs.validator}}"
