@@ -8,3 +8,5 @@ jobs:
     steps:
       - name: Run my specifics
         uses: neal-core/custom-action@main
+        with:
+          username: Neal
