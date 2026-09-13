@@ -1,0 +1,9 @@
+name: Test Action
+description: My very first GitHub action
+
+runs:
+  using: composite
+  steps:
+    - name: Say hi
+      shell: bash
+      run: echo "Hioooooo"
